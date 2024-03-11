@@ -17,6 +17,7 @@
   border-left: 3px solid gray;
   margin-left: 1em;
   padding-left: 1em;
+  white-space: nowrap;
 }
 
 .navlink:hover {
