@@ -118,3 +118,73 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .mission-container {
+    overflow-x: hidden;
+  }
+
+  .table {
+    width: 100%;
+    font-size: 15px;
+    margin: 0.5px;
+  }
+
+  .table td {
+    padding: 0;
+  }
+
+  .table th {
+    padding: 1.5rem 0.05rem;
+    align-items: center;
+  }
+
+  button {
+    font-size: 10px !important;
+    padding: 0 !important;
+  }
+
+  .cell {
+    padding: 0;
+    font-size: 10px;
+  }
+
+  .column:first-child {
+    width: 20%;
+    text-align: center;
+  }
+
+  .column:nth-child(2) {
+    text-align: center;
+  }
+
+  .column:nth-child(3) {
+    width: 20%;
+    text-align: center;
+  }
+
+  .column:nth-child(4) {
+    width: 16%;
+    text-align: center;
+  }
+
+  .member {
+    padding: 5px;
+    font-size: 7px;
+    font-weight: 100;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .notmember {
+    padding: 5px;
+    background-color: #777474;
+    color: white;
+    border-radius: 1px;
+    white-space: nowrap;
+    font-size: 7px;
+    font-weight: 100;
+    letter-spacing: 0;
+    line-height: 0;
+  }
+}

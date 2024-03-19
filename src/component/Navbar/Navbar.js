@@ -1,56 +1,55 @@
-import React from 'react';
+import React, { useState } from "react";
+import { IoClose, IoMenu } from "react-icons/io5";
 import {
-  Link, Routes, Route, BrowserRouter, useMatch,
+  BrowserRouter, Routes, Route, NavLink,
 } from 'react-router-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
-import Rockets from '../Rocket/Rockets';
-import Missions from '../Mission/Missions';
-import Dragons from '../Dragon/Dragons';
-import Profile from '../Profile/Profile';
+import "./Navbar.css";
 import style from './Navbar.module.css';
 import planetLogo from './planet.png';
 
-export default function Navbar() {
+function Navbar() {
+  const [active, setActive] = useState(false); // Use boolean for active state
+  const [icon, setIcon] = useState(false); // Use boolean for icon state
+  const navToggle = () => {
+    setActive(!active);
+    setIcon(!icon);
+  };
+  const hideNav = () => {
+    setActive(false);
+    setIcon(false);
+  };
+
   return (
-    <BrowserRouter>
-      <nav className={style.nav}>
-        <div className={style.navbar}>
-          <div className={style.logo}>
-            <img src={planetLogo} alt="planet-logo" className={style.logoImg} />
-            <h1 className={style.title}>Space Travelers&apos; Hub</h1>
-          </div>
-          <div className={style.space}>
-            <NavLink to="/" label="Rockets" />
-            <NavLink to="/mission" label="Missions" />
-            <NavLink to="/dragon" label="Dragons" />
-            <NavLink to="/profile" label="My Profile" />
-          </div>
+    <nav className={active ? "nav nav--expanded" : "nav"} >
+       <NavLink to="/"className="nav__brand">
+      <p className="logo">
+      <img src={planetLogo} alt="planet-logo" className="logoImg"/>
+            <h1 className="title">Space Travelers&apos; Hub</h1>
+      </p>
+      </NavLink>
+      <ul className={active ? "nav__active" : "nav__menu"}>
+        <li className="nav__item">
+          <NavLink to="/" className="navlink-class"  onClick={hideNav}>Rockets</NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink to="mission" className="navlink-class"  onClick={hideNav}>Missions</NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink to="dragon" className="navlink-class" onClick={hideNav}>Dragons</NavLink>
+        </li>
+        <li className="nav__item">
+          <NavLink to="profile" className="navlink-class" onClick={hideNav}>My Profile</NavLink>
+        </li>
+      </ul>
+      <div onClick={navToggle} className="nav__toggler.active ">
+        <div className="menugroup">
+        <div className={icon ? "nav__close" : "menu"} id="nav-close">
+          {icon ? <IoClose size={32} color="black" /> : <IoMenu size={32} color="black" />}
         </div>
-        <main>
-          <Routes>
-            <Route path="/" element={<Rockets />} />
-            <Route path="/mission" element={<Missions />} />
-            <Route path="/dragon" element={<Dragons />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </main>
-      </nav>
-    </BrowserRouter>
+        </div>
+      </div>
+    </nav>
   );
 }
 
-function NavLink({ to, label }) {
-  const isActive = useMatch(to);
-
-  return (
-    <Link to={to} className={`${style.navlink} ${isActive ? style.activelink : ''}`}>
-      {label}
-    </Link>
-  );
-}
-
-NavLink.propTypes = {
-  to: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-};
+export default Navbar;

@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.2em;
+  align-items: center;
+  margin-left: auto;
+  width: 60%;
+  font-size: 1.2rem;
+}
+
+.logo {
+  display: flex;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.nav__brand {
+  text-decoration: none;
+  color: black;
+  width: 40%;
+}
+
+.logoImg {
+  max-width: 6%;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav__menu li:last-of-type {
+  border-left: 3px solid gray;
+  margin-left: 1em;
+  padding-left: 1em;
+  white-space: nowrap;
+}
+
+.navlink-class {
+  margin-left: 2em;
+  text-decoration: none;
+  color: #08f;
+  letter-spacing: 0.03rem;
+}
+
+.navlink-class:hover {
+  text-decoration: underline;
+  color: #d63384;
+  box-sizing: border-box;
+}
+
+.navlink-class.active {
+  text-decoration: underline;
+  color: blue;
+  text-underline-offset: 4px;
+}
+
+.menugroup {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 96%;
+    padding: 2em;
+    background-color: red;
+    margin: 0;
+  }
+
+  .menugroup {
+    position: fixed;
+    top: 1%;
+    right: 2%;
+    display: block;
+    color: black;
+  }
+
+  .logo {
+    position: fixed;
+    top: 1%;
+    left: 3%;
+  }
+
+  .nav__active .menugroup {
+    width: 100px !important;
+    color: black;
+    right: 0;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .nav--expanded {
+    position: fixed;
+    height: 100vh;
+    transition: height 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav--expanded .nav__active {
+    background-color: hsla(234, 100%, 69%, 0.934);
+    backdrop-filter: blur(9px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 30%;
+    padding-top: 20%;
+    margin-top: -50px;
+  }
+
+  .navlink-class {
+    color: white;
+    font-size: 2rem;
+    gap: 12rem;
+  }
+
+  li:last-of-type {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}

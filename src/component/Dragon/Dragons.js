@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 import DragonList from './DragonList';
 import { fetchDragons } from '../../redux/dragon/dragonSlice';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 export default function Dragons() {
   const { totalDragons } = useSelector((state) => state.dragon);
@@ -13,8 +15,10 @@ export default function Dragons() {
     }
   }, [dispatch, totalDragons.length]);
   return (
-    <ul className="dragon-container">
+    <Container fluid>
+   
       {totalDragons.map((dragon) => (
+        <Row>
         <DragonList
           key={dragon.id}
           id={dragon.id}
@@ -23,7 +27,8 @@ export default function Dragons() {
           image={dragon.flickr_images}
           reserved={dragon.reserved}
         />
+        </Row>
       ))}
-    </ul>
+    </Container>
   );
 }

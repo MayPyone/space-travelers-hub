@@ -3,15 +3,16 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { reserveDragon, cancelDragon } from '../../redux/dragon/dragonSlice';
-
+import Col from 'react-bootstrap/Col';
 export default function DrgaonList(props) {
   const dispatch = useDispatch();
   const {
     id, name, type, image, reserved,
   } = props;
   return (
-    <li className="dragon-list" key={id}>
-      <img className="dragonimage" src={image} alt="" />
+      <Col>
+          <li className="dragon-list" key={id}>
+      <div className='image-container'><img className="dragonimage" src={image} alt="" /></div>
       <div className="about">
         <div className="dragon">{name}</div>
         {
@@ -35,6 +36,7 @@ export default function DrgaonList(props) {
         }
       </div>
     </li>
+   </Col>
   );
 }
 DrgaonList.propTypes = {
