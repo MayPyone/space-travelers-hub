@@ -56,11 +56,15 @@
 
 @media screen and (max-width: 768px) {
   .image-container {
-    width: 60%;
+    width: 80%;
     height: 150px;
   }
 
   .container {
     margin-top: 5%;
+  }
+
+  .dragon-list .about {
+    margin-left: 5%;
   }
 }
