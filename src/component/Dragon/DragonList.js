@@ -2,17 +2,17 @@ import './dragon.css';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { reserveDragon, cancelDragon } from '../../redux/dragon/dragonSlice';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { reserveDragon, cancelDragon } from '../../redux/dragon/dragonSlice';
+
 export default function DrgaonList(props) {
   const dispatch = useDispatch();
   const {
     id, name, type, image, reserved,
   } = props;
   return (
-          <li className="dragon-list" key={id}>
-      <div className='image-container'><img className="dragonimage" src={image} alt="" /></div>
+    <li className="dragon-list" key={id}>
+      <div className="image-container"><img className="dragonimage" src={image} alt="" /></div>
       <div className="about">
         <div className="dragon">{name}</div>
         {

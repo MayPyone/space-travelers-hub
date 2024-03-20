@@ -2,9 +2,7 @@
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Container from 'react-bootstrap/Container';
-import ReservedRocketList from './ReservedRocketList';
 import style from './Profile.module.css';
 
 export default function Profile() {
@@ -25,26 +23,28 @@ export default function Profile() {
             <ul>
               {selectedRockets
                 .map((rocket) => (
-                    <li
-                      key={rocket.id}
-                      name={rocket.name}>{rocket.name}
-                        </li>
+                  <li
+                    key={rocket.id}
+                    name={rocket.name}
+                  >
+                    {rocket.name}
+                  </li>
                 ))}
             </ul>
           )}
       </div>
       <div className={style.dragonSection}>
-      <h2 className={style.listTitle}>My Dragons</h2>
+        <h2 className={style.listTitle}>My Dragons</h2>
         {selectedDragons.length === 0
           ? <p style={{ fontStyle: 'italic' }}>No Selected Dragon</p> : (
             <ul>
               {selectedDragons
                 .map((dragon) => (
                   <li key={dragon.id}>
-                   {dragon.name}
+                    {dragon.name}
                   </li>
                 ))}
-           </ul>
+            </ul>
           )}
       </div>
       <div className={style.missionsList}>
