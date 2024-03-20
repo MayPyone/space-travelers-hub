@@ -3,19 +3,9 @@
   height: 250px;
 }
 
-.about {
-  width: 100%;
-  background-color: yellow;
-}
-
 .dragonimage {
   width: 100%;
   height: 100%;
-}
-
-.dragon-container {
-  margin-top: 1%;
-  background-color: blue;
 }
 
 .dragon-list {
@@ -24,20 +14,15 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color: pink;
 }
 
 .dragon-list button {
-  margin-top: 14%;
-  background-color: #0290ff;
-  padding: 5% 7%;
-  border-radius: 4%;
-  border: none;
+  margin-top: 2%;
 }
 
 .dragon-list .about {
   padding: 0.3% 0;
-  width: 15%;
+  width: 75%;
   margin-left: 0.5%;
 }
 
@@ -61,12 +46,20 @@
 
 .dragon-list .cancel {
   border: 1px solid gray;
-  margin-top: 14%;
-  padding: 5% 7%;
-  border-radius: 4%;
-  background-color: white;
+  margin-top: 2%;
 }
 
 .dragon-list .cancel:hover {
   background-color: whitesmoke;
+}
+
+@media screen and (max-width: 768px) {
+  .image-container {
+    width: 60%;
+    height: 150px;
+  }
+
+  .container {
+    margin-top: 5%;
+  }
 }

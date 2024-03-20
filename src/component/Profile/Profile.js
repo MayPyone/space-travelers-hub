@@ -18,38 +18,33 @@ export default function Profile() {
 
   return (
     <Container fluid className={style.container}>
-      <div className={style.rocketSection}>
-        <h4>My Rockets</h4>
+      <div className={style.dragonSection}>
+        <h2 className={style.listTitle}>My Rockets</h2>
         {selectedRockets.length === 0
           ? <p style={{ fontStyle: 'italic' }}>No Selected Rocket</p> : (
-            <ListGroup className={style.rocketList}>
+            <ul>
               {selectedRockets
                 .map((rocket) => (
-                  <ListGroup.Item key={rocket.id}>
-                    <ReservedRocketList
+                    <li
                       key={rocket.id}
-                      name={rocket.name}
-                    />
-                  </ListGroup.Item>
+                      name={rocket.name}>{rocket.name}
+                        </li>
                 ))}
-            </ListGroup>
+            </ul>
           )}
       </div>
-      <div className={style.rocketSection}>
-        <h4>My Dragons</h4>
+      <div className={style.dragonSection}>
+      <h2 className={style.listTitle}>My Dragons</h2>
         {selectedDragons.length === 0
           ? <p style={{ fontStyle: 'italic' }}>No Selected Dragon</p> : (
-            <ListGroup className={style.rocketList}>
+            <ul>
               {selectedDragons
                 .map((dragon) => (
-                  <ListGroup.Item key={dragon.id}>
-                    <ReservedRocketList
-                      key={dragon.id}
-                      name={dragon.name}
-                    />
-                  </ListGroup.Item>
+                  <li key={dragon.id}>
+                   {dragon.name}
+                  </li>
                 ))}
-            </ListGroup>
+           </ul>
           )}
       </div>
       <div className={style.missionsList}>

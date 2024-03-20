@@ -9,6 +9,7 @@ function App() {
   return (
     <Router>
     <nav>
+     <Navbar />
      </nav>
      <main>
         <Routes>  

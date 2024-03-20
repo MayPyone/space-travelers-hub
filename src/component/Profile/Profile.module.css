@@ -7,6 +7,7 @@
 }
 
 .rocketSection,
+.dragonSection,
 .missionsList {
   width: 100%;
 }
@@ -26,7 +27,8 @@
   font-style: italic;
 }
 
-.missionsList ul {
+.missionsList ul,
+.dragonSection ul {
   list-style-type: none;
   padding: 0;
   border: 1px solid #ddd;
@@ -34,11 +36,26 @@
   width: 100%;
 }
 
+.dragonSection ul li,
 .missionsList ul li {
-  padding: 10px 15px 5px 16px;
-  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1%;
 }
 
 .missionsList ul li:last-child {
   border-bottom: none;
+}
+
+@media screen and (max-width: 768px) {
+  .listTitle {
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+  }
+
+  .dragonSection ul li,
+  .missionsList ul li {
+    padding: 2px;
+  }
 }

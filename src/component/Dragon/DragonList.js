@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { reserveDragon, cancelDragon } from '../../redux/dragon/dragonSlice';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 export default function DrgaonList(props) {
   const dispatch = useDispatch();
   const {
     id, name, type, image, reserved,
   } = props;
   return (
-      <Col>
           <li className="dragon-list" key={id}>
       <div className='image-container'><img className="dragonimage" src={image} alt="" /></div>
       <div className="about">
@@ -22,21 +22,20 @@ export default function DrgaonList(props) {
                 <span className="reserved">Reserved</span>
                 <span className="type">{type}</span>
               </div>
-              <button data-testid="cancel-btn" type="button" className="cancel" onClick={() => dispatch(cancelDragon(id))}>
+              <Button data-testid="cancel-btn" type="button" className="cancel" variant="light" onClick={() => dispatch(cancelDragon(id))}>
                 Cancle Reservation
-              </button>
+              </Button>
             </div>
           )
             : (
               <div>
                 <div className="type">{type}</div>
-                <button data-testid="reserve-btn" className="d-reserve" type="button" onClick={() => dispatch(reserveDragon(id))}>Reserve Dragon</button>
+                <Button className="d-reserve" variant="primary" onClick={() => dispatch(reserveDragon(id))}>Reserve Dragon</Button>
               </div>
             )
         }
       </div>
     </li>
-   </Col>
   );
 }
 DrgaonList.propTypes = {

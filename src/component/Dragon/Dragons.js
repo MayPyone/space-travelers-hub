@@ -18,7 +18,7 @@ export default function Dragons() {
     <Container fluid>
    
       {totalDragons.map((dragon) => (
-        <Row>
+        <Row className='container'>
         <DragonList
           key={dragon.id}
           id={dragon.id}

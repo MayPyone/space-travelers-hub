@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin: 0;
 }
@@ -55,7 +55,6 @@ li {
 .nav__menu li:last-of-type {
   border-left: 3px solid gray;
   margin-left: 1em;
-  padding-left: 1em;
   white-space: nowrap;
 }
 
@@ -84,24 +83,28 @@ li {
 
 @media screen and (max-width: 768px) {
   .nav {
-    width: 96%;
-    padding: 2em;
-    background-color: red;
-    margin: 0;
+    width: 100%;
+    background-color: #7bbff3;
   }
 
   .menugroup {
     position: fixed;
-    top: 1%;
+    top: 1px;
     right: 2%;
     display: block;
     color: black;
   }
 
+  .title {
+    font-size: 1.5rem;
+  }
+
   .logo {
+    top: 1px;
     position: fixed;
-    top: 1%;
-    left: 3%;
+    padding-left: 3%;
+    background-color: #7bbff3;
+    width: 100%;
   }
 
   .nav__active .menugroup {
@@ -140,11 +143,14 @@ li {
 
   .navlink-class {
     color: white;
-    font-size: 2rem;
-    gap: 12rem;
+    font-size: 1rem;
   }
 
-  li:last-of-type {
+  .nav__active li {
+    margin-bottom: 10%;
+  }
+
+  .nav__menu li:last-of-type {
     border-left: 0;
     margin-left: 0;
     padding-left: 0;
